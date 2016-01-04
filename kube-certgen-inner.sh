@@ -20,11 +20,11 @@ openssl_cnf="/etc/ssl/openssl.cnf"
 
 if [ ! -f "${in_dir}/root-ca.key" ]; then
   echo "Signing key not found: ${in_dir}/root-ca.key"
-  return 1
+  exit 1
 fi
 if [ ! -f "${in_dir}/root-ca.crt" ]; then
   echo "Root certificate not found: ${in_dir}/root-ca.key"
-  return 1
+  exit 1
 fi
 
 mkdir -p "${out_dir}"
